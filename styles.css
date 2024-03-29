@@ -1,0 +1,317 @@
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #DEDEDE; /* White text color */
+    background: linear-gradient(to bottom, #20000e, #1a1a1a); /* Gradient background */
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto; /* Center align the container */
+    padding: 20px calc(2vw); /* Add some padding to the sides */
+}
+
+.bigger-text {
+    font-size: 2.5rem; /* Adjust the font size as needed */
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(70, 74, 88, 0.3); /* Background color for the menu */
+    z-index: 1000; /* Ensure menu is above other content */
+    border-radius: 40px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center; /* Center menu items horizontally */
+    padding: 10px 0; /* Add padding for spacing */
+}
+
+.menu-item {
+    margin: 0 10px; /* Add margin between menu items */
+    padding: 8px 12px; /* Add padding for spacing */
+    background-color: rgba(70, 74, 88, 0.5);
+    border-radius: 20px; /* Soften edges */
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #DEDEDE; /* Text color */
+}
+
+.menu-item:hover {
+    text-decoration: none;
+    background-color: rgba(70, 74, 88, 1); /* Change background color on hover */
+    border-radius: 20px;
+}
+
+
+#header-bottom {
+    padding: 10px 0; /* Add padding for spacing */
+}
+
+#secondary-menu {
+    text-align: center; /* Center menu items horizontally */
+}
+
+#secondary-menu ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    text-align: center; /* Center the menu items */
+}
+
+#secondary-menu li {
+    display: inline-block; /* Display the list items inline */
+    margin: 0 10px; /* Add margin to all sides */
+}
+
+#secondary-menu img {
+    width: 24px; /* Set the width of the icons */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: middle; /* Align the icons vertically in their containing boxes */
+}
+#secondary-menu a {
+    font-size:20px;
+    text-decoration: none;
+    color: #1a1a1a; /* Text color */
+    padding: 8px 12px; /* Add padding for spacing */
+    background-color: rgb(222,222,222,0.8); /* Background color for menu items */
+    border-radius: 40px; /* Soften edges */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+#secondary-menu a:hover {
+    background-color: rgb(222,222,222,1);
+    text-decoration: none;
+}
+
+.icon {
+    width: 20px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#skills {
+        padding: 0px 0; /* Add some padding around the skills section */
+}
+
+.skills-list {
+    display: flex; /* Use flexbox layout for the skills list */
+    justify-content: center; /* Center align the skills horizontally */
+    flex-wrap: wrap; /* Allow skills to wrap to the next line if needed */
+}
+
+.skill {
+    font-size:20px;
+    background-color: rgba(70, 74, 88, 0.5); /* Background color for the skill boxes */
+    color: #DEDEDE; /* Text color */
+    padding: 10px 20px; /* Add padding inside the skill boxes */
+    margin: 10px; /* Add some margin between skill boxes */
+    border-radius: 10px; /* Add rounded corners for soft edges */
+}
+
+.profile-picture {
+    width: 200px; /* Set the width of the profile picture */
+    height: 200px; /* Set the height of the profile picture */
+    border-radius: 50%; /* Make the profile picture round */
+    overflow: hidden; /* Hide any content outside the border-radius */
+    margin: 0 auto 20px; /* Center align the profile picture and add some margin below it */
+    background-color: #DEDEDE; /* Background color for the circle (optional) */
+    border: 2px solid #DEDEDE;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow effect for depth */
+}
+
+.profile-picture img {
+    display: block; /* Make the image a block element */
+    width: 100%; /* Ensure the image fills the circle */
+    height: auto; /* Automatically adjust the height */
+}
+
+header, footer {
+    text-align: center; /* Center align text within header and footer */
+}
+
+main {
+    text-align: center; /* Center align text within main content */
+}
+
+section {
+    margin-bottom: 50px; /* Add some space between sections */
+}
+
+h1 {
+    margin-top: 0; /* Remove default top margin for h1 */
+    font-size: 2.5rem; /* Increase font size for h1 */
+}
+
+h2 {
+    font-size: 2rem; /* Increase font size for h2 */
+}
+
+h3 {
+    font-size:24px; /* Increase font size for h3 */
+    font-weight: lighter;
+}
+
+/* Optional: Add styling for links */
+a {
+    color: #B0DFE5;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Move the timeline styling to the specific section */
+#experience {
+  display: inline-block; 
+  position: relative; /* Ensure the section is positioned relatively */
+}
+
+#experience:before {
+  content: '';
+  position: absolute; /* Position the vertical line absolutely */
+  top:15%;
+  left:50%;
+  transform:translateX(-50%);
+  width:4px;
+  background-color:#DEDEDE;
+  height: 80%;
+  }
+
+#experience .entries {
+  width:calc(100% - 80px);
+  max-width: 1200px; /* Adjust the desired width */
+  margin: 0 auto; /* Center the section horizontally */
+  position: relative;
+  left:-5px;
+  height: 70vh;
+}
+
+#experience .entry {
+  width:calc(50% - 80px);
+  float:left; 
+  padding:20px;
+  clear:both;
+  text-align:right;
+}
+
+#experience .entry:not(:first-child) {
+  margin-top:-60px;
+}
+
+#experience .entry .title {
+  font-size:24px;
+  position: relative;
+}
+
+#experience .entry .subtitle {
+  color: #B2B2B2;
+  text-decoration: none;
+  margin-bottom:12px;
+  position: relative;
+}
+
+#experience .entry .title:before {
+  content: '';
+  position: absolute;
+  width:8px;
+  height:8px;
+  border:4px solid #DEDEDE;
+  background-color:#DEDEDE;
+  border-radius:100%;
+  top:50%;
+  transform:translateY(-50%);
+  right:-73px;
+  z-index:1000;
+}
+
+#experience .entry .title.big:before {
+  width:24px;
+  height:24px;
+  transform:translate(8px,-50%);
+}
+
+#experience .entry .body {
+}
+
+#experience .entry:nth-child(2n) {
+  text-align:left;
+  float:right;
+}
+
+#experience .entry:nth-child(2n) .title:before {
+  left:-63px;
+}
+
+#experience .entry:nth-child(2n) .title.big:before {
+  transform:translate(-8px,-50%);
+}
+
+#projects {
+    padding: 0px 0;
+}
+
+.project-link {
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.project-link:hover {
+    text-decoration: none;
+    background-color: rgba(70, 74, 88, 0.8); /* Change background color on hover */
+    border-radius: 10px;
+}
+
+.project {
+    display: flex;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+}
+
+.project-description {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(70, 74, 88, 0.5); /* Background color with transparency */
+    text-align: left;
+}
+
+.project-image {
+    flex: 1;
+    background-color: rgba(70, 74, 88, 0.5);
+    display: flex; /* Enable flexbox layout */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.project-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.skills-list_project {
+    margin-bottom: 10px;
+}
+
+.skill_project {
+    font-size:12px;
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #39001A;
+    color: #DEDEDE;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.project-link {
+    display: block; /* Make the link cover the entire big box */
+    color: inherit; /* Inherit the text color */
+}
+
