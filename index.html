@@ -1,285 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konstantinos Antonopoulos</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<nav id="menu">
-    <div class="menu-container">
-        <div class="menu-item"><a href="#about">About</a></div>
-        <div class="menu-item"><a href="#projects">Projects</a></div>
-        <div class="menu-item"><a href="#skills">Skills</a></div>
-        <div class="menu-item"><a href="#experience">Experience</a></div>
-        <div class="menu-item"><a href="#contact">Contact</a></div>
-    </div>
-</nav>
-
-<div style="height: 100px;"></div>
-
-</header>
-    <!-- Header Section -->
-    <header id="header">
-        <div class="container">
-		<div class="profile-picture">
-            		<img src="images/profile-picture.jpg" alt="Profile Picture">
-        	</div>
-            <p class="bigger-text">Hi, I'm Konstantinos, a <u>Bioinformatician</u> 
-                with a passion for cutting-edge research in <u>proteomics</u> and <u>aging diseases</u>.</p>
+    <header>
+        <div class="header-container">
+          <h2>Konstantinos Antonopoulos</h2>
+          <div class="spacer"></div>
+          <nav>
+            <ul class="menu">
+              <li><a href="#about">About</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <label class="switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+          </label>
         </div>
-    </header>
+      </header>
 
-<section id="header-bottom">
-    <nav id="secondary-menu">
-        <ul>
-            <li><a href="mailto:k.antono@outlook.com"><strong>Contact Me</strong></a></li>
-            <li><a href="files/KAntonopoulos_CV.pdf" target="_blank"><strong>CV</strong></a></li>
-            <li><a href="https://www.linkedin.com/in/kantonopoulos/" target="_blank"><img src="images/linkedin-icon.png" alt="LinkedIn" class="icon"></a></li>
-            <li><a href="https://github.com/kantonopoulos" target="_blank"><img src="images/github-icon.png" alt="GitHub" class="icon"></a></li>
-        </ul>
-    </nav>
-</section>
-
-<div style="height: 50px;"></div>
-
-    <!-- Main Content Section -->
-    <main id="main">
-        <!-- About Me Section -->
-        <section id="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>I'm Konstantinos, a Bioinformatician with a keen interest in understanding aging diseases. 
-                    I started my academic journey at Aristotle University of Thessaloniki, where I earned my MEng 
-                    degree in Chemical Engineering, and continued with a joint master in Molecular Techniques in 
-                    Life Science at Karolinska Institutet, KTH and Stockholm University.</p>
-
-                <p>Throughout my education, I specialized in <u>bioinformatics</u>, mastering techniques in <u>data analysis</u>, 
-                    <u>computational biology</u>, and <u>machine learning</u>. My proficiency extends to molecular techniques and 
-                    medical devices, providing a comprehensive skill set for my research endeavors.</p>
-
-                <p>My main focus is on using data to find ways to improve healthcare. Currently, I'm researching plasma biomarkers 
-                    for diseases under the <u><strong>Human Blood Disease Atlas</strong></u> project, aiming to make a real difference 
-                    in diagnosis and treatment.</p>
-
-                <p>Outside of work, I enjoy making music, playing tennis, and taking on new challenges. Whether it's creating melodies 
-                    or improving my coding skills, I love learning and growing.</p>
-
-                <p>I've created this website to share my experiences and connect with others interested in biomedical research and bioinformatics. 
-                    Feel free to reach out to me on <a href="https://www.linkedin.com/in/kantonopoulos/" target="_blank">LinkedIn</a> 
-                    or via email at <a href="mailto:k.antono@outlook.com" target="_blank">k.antono@outlook.com</a> – let's collaborate 
-                    and make a difference together.</p>
+      <div class="container">
+        <!-- Main Section -->
+        <main>
+          <div class="main-content">
+            <div class="text-container">
+              <h1 class="main-headline">Transforming Biology with Data Science</h1>
+              <p class="main-description">Hi, I'm Konstantinos – a data scientist and researcher specializing in <span class="highlight">machine learning</span> and <span class="highlight">bioinformatics</span>. I like to solve complex biological challenges, manage multidisciplinary projects, collaborate globally, and develop open-source tools.</p>
             </div>
-        </section>
-
-        <!-- Projects Section -->
-    <div class="container">
-        <h2>My Projects</h2>
-        <section id="projects">
-            <a href="https://hda1472.github.io/HDAnalyzeR/" target="_blank" class="project-link">
-                <div class="project">
-                    <div class="project-description">
-                        <h3>HDAnalyzeR - Steamlined Plasma Proteomics</h3>
-                        <p>HDAnalyzeR is an R package I developed while working for the Human Disease Blood Atlas group, designed 
-                            to facilitate proteomics analysis for biomarker selection from blood plasma samples. 
-                            It is optimized to work with Olink proteomics data, but it can be adapted to other 
-                            proteomics platforms. HDAnalyzeR offers ready-to-use functions for common proteomics 
-                            tasks such as protein differential expression analysis, classification models, imputation methods, 
-                            dimensionality reduction, and data visualization, aiming to streamline workflows and enhance 
-                            the standardization and efficiency of biomarker discovery in groups research.</p>
-                        <div class="skills-list_project">
-                            <div class="skill_project">R</div>
-                            <div class="skill_project">Package Development</div>
-                            <div class="skill_project">Proteomics</div>
-                            <div class="skill_project">Data Visualization</div>
-                            <div class="skill_project">Machine Learning</div>
-                        </div>
-                    </div>
-                    <div class="project-image">
-                        <img src="images/hdanalyzer.png" alt="Project Image">
-                    </div>
-                </div>
+            <div class="image-container">
+              <img class="profile-image" src="images/profile-picture.jpg" alt="Profile Image">
+            </div>
+          </div>
+        </main>
+    
+        <!-- About Me Section -->
+        <section id="about" class="section">
+          <h2>About Me</h2>
+          <p>I am a data scientist and researcher with a strong background in bioinformatics, molecular techniques, and data analysis. My journey began with a degree in Chemical Engineering, where I developed a passion for applying technical problem-solving to real-world challenges. I later pursued a Master’s in Molecular Techniques in Life Science, deepening my expertise in machine learning, data science, and bioinformatics, particularly within the life sciences.</p>
+            
+          <p>Throughout my academic and professional career, I’ve focused on uncovering biological insights using advanced data-driven techniques. My work includes developing tools like HDAnalyzeR, an R package for proteomics analysis, and contributing to the Human Protein Atlas, where I identified biomarkers for cancer, metabolic and cardiovascular conditions. These experiences help me develop my skills in data modeling, visualization, and scientific communication, while allowing me to collaborate with global research teams.</p>
+            
+          <p>In addition to technical skills, I’ve managed multidisciplinary projects and taken on leadership roles in voluntary organizations, where I learned the importance of teamwork, adaptability, and effective project management.</p>
+          
+          <p>Looking ahead, I aspire to bridge the gap between science and industry as a biotech or pharma consultant. I’m passionate about helping organizations leverage data-driven solutions to address complex challenges in biology, healthcare, and beyond.</p>
+          </section>
+          
+        <!-- Project Section -->
+        <section id="projects" class="section">
+          <h2>Solving Complex Problems with Data</h2>
+          <div class="projects-container">
+            <a href="https://hda1472.github.io/HDAnalyzeR/" class="project-link">
+            <div class="project-box">
+              <div class="project-image">
+                <img src="images/hdanalyzer.png" alt="Project 1">
+              </div>
+              <div class="project-text">
+                <h3>HDAnalyzeR: Streamlining Proteomic Data Analysis for Biomarker Research</h3>
+                <p>HDAnalyzeR is an R package I developed to streamline the analysis of proteomics data, offering researchers 
+                  an efficient and user-friendly tool to process and interpret large datasets. This project was driven by 
+                  the need to enhance the accessibility and reproducibility of proteomic analyses, critical for uncovering 
+                  biomarkers and understanding disease mechanisms. By designing and implementing this package, I gained valuable 
+                  experience in R programming, software development, and bioinformatics workflows. I also strengthened my ability 
+                  to address complex research challenges, optimize data pipelines, and create clear documentation to support the 
+                  scientific community.</p>
+              </div>
+            </div>
             </a>
 
-            <a href="https://github.com/kantonopoulos/sciviz" target="_blank" class="project-link">
-                <div class="project">
-                    <div class="project-image">
-                        <img src="images/sciviz_logo.png" alt="Project Image">
-                    </div>
-                    <div class="project-description">
-                        <h3>SciViz - Simplified Scientific Visualization</h3>
-                        <p>As part of my passion for data visualization, I embarked on a side project to curate and refine 
-                            a collection of my most frequently used code snippets. This project led to the creation 
-                            of SciViz, a Python package crafted to streamline the development of visually appealing 
-                            and publication-quality plots. Designed with the specific needs of students and researchers in mind, 
-                            SciViz empowers users to effortlessly produce stunning statistical data analysis visuals through concise 
-                            and intuitive function calls.</p>
-                        <div class="skills-list_project">
-                            <div class="skill_project">Python</div>
-                            <div class="skill_project">Data Visualization</div>
-                            <div class="skill_project">Seaborn</div>
-                            <div class="skill_project">Matplotlib</div>
-                        </div>
-                    </div>
-                </div>
+            <a href="https://github.com/HDA1472/IGTM_SCAPIS_multilabel_classification" class="project-link">
+            <div class="project-box">
+              <div class="project-text">
+                <h3>Decoding Cardio-Metabolic Disease Patterns with Multi-Label Classification</h3>
+                <p>This project focused on identifying biomarker signatures for patients with co-occurring metabolic and cardiovascular 
+                  conditions using multi-label classification techniques. By analyzing complex proteomics datasets, I managed to classify 
+                  patients based on overlapping disease states, contributing to a deeper understanding of disease mechanisms and 
+                  potential therapeutic targets. This experience improved my skills in R programming, advanced statistical modeling, and 
+                  bioinformatics. I also learned to visualize highly intricate data in an intuitive and efficient manner, enabling clearer 
+                  communication of complex insights.</p>
+              </div>
+              <div class="project-image">
+                <img src="images/cm_disease.png" alt="Project 2">
+              </div>
+            </div>
             </a>
             
-        <!-- <a href="https://github.com/kantonopoulos/OLINK-VS-MS" target="_blank" class="project-link"> -->
-            <div class="project">
-                <div class="project-description">
-                    <h3>Cancer Biomarkers Identification</h3>
-                    <p>In my project conducted at Fredrik Edfors' lab, I conducted a comparative analysis of different proteomics 
-                        platforms to identify biomarkers. By integrating protein differential expression analysis with classification 
-                        models, I aimed to discern significant protein expression patterns indicative of various biological states or 
-                        conditions. This comprehensive approach allowed for a thorough exploration of proteomic data, leveraging the 
-                        strengths of different platforms to enhance biomarker discovery and classification accuracy.</p>
-                    <div class="skills-list_project">
-                        <div class="skill_project">R</div>
-                        <div class="skill_project">Bioinformatics</div>
-                        <div class="skill_project">Proteomics</div>
-                        <div class="skill_project">Statistical Analysis</div>
-                        <div class="skill_project">Machine Learning</div>
-                    </div>
+            <a href="https://sciviz.readthedocs.io/en/latest/preface.html" class="project-link">
+              <div class="project-box">
+                <div class="project-image">
+                  <img src="images/sciviz_logo.png" alt="Project 1">
+                </div>
+                <div class="project-text">
+                  <h3>SciViz: Simplifying Scientific Visualization</h3>
+                  <p>SciViz is a Python-based project I initiated to help researchers with an intuitive tool for creating publication-ready 
+                    visualizations. Recognizing the weakness of Python to visualize complex data effectively and aesthetically, I designed 
+                    SciViz to simplify and enhance the process of data visualization, making it accessible even for those with limited coding 
+                    experience. Through this project, I gained hands-on expertise in Python programming, data visualization libraries, and 
+                    user-focused software development. I also learned to anticipate user needs and create comprehensive documentation to ensure 
+                    usability.</p>
+                </div>
+              </div>
+              </a>
+  
+              <a href="https://github.com/kantonopoulos/ProteinSS-Prediction-Keras" class="project-link">
+              <div class="project-box">
+                <div class="project-text">
+                  <h3>Protein Secondary Structure Prediction with Neural Networks</h3>
+                  <p>As part of my Master’s program in Molecular Techniques in Life Science, I undertook a bioinformatics project focused on 
+                    improving protein secondary structure prediction using neural networks. Leveraging multiple sequence alignment data and 
+                    a sliding window approach, I developed a model that achieved higher prediction accuracy. To optimize performance, I incorporated 
+                    advanced techniques such as dropout and ensemble modeling, ensuring robustness and reliability. The project emphasized the 
+                    critical role of hyperparameter tuning and architectural design in boosting model effectiveness, as demonstrated by strong 
+                    evaluation metrics.</p>
                 </div>
                 <div class="project-image">
-                    <img src="images/genetics.jpg" alt="Project Image">
+                  <img src="images/protein_structure.png" alt="Project 2">
                 </div>
-            </div>
-        </a>
+              </div>
+              </a>
+          </div>
+        </section>
 
-        <a href="https://github.com/kantonopoulos/ProteinSS-Prediction-Keras" target="_blank" class="project-link">
-            <div class="project">
-                <div class="project-image">
-                    <img src="images/protein_structure.png" alt="Project Image">
-                </div>
-                <div class="project-description">
-                    <h3>Protein Secondary Structure Prediction</h3>
-                    <p>In this bioinformatics project within the Molecular Techniques in Life Science master’s program, I aimed to 
-                        enhance protein secondary structure prediction using neural networks. By utilizing multiple sequence alignment 
-                        data and a sliding window approach, I improved prediction accuracy. Techniques like dropout and ensemble modeling 
-                        further optimized model performance. Evaluation metrics demonstrated the model’s effectiveness in distinguishing 
-                        between secondary structure classes. Our results underscored the importance of hyperparameter optimization and 
-                        architectural design in boosting prediction accuracy, showcasing the potential of neural networks for precise protein 
-                        structure analysis in bioinformatics.</p>
-                    <div class="skills-list_project">
-                        <div class="skill_project">Python</div>
-                        <div class="skill_project">Deep Learning</div>
-                        <div class="skill_project">Keras</div>
-                        <div class="skill_project">TensorFlow</div>
-                    </div>
-                </div>
-            </div>
-        </a>
-
-        <a href="https://github.com/kantonopoulos/Rheological-Analysis-Toolbox" target="_blank" class="project-link">
-            <div class="project">
-                <div class="project-description">
-                    <h3>Rheological Analysis Toolbox</h3>
-                    <p>The Rheological Analysis Toolbox was a part of my undergraduate thesis project and is a powerful set of tools designed 
-                        for rheological analysis and data processing of synovial fluid samples, with a primary focus on facilitating 
-                        Osteoarthritis (OA) diagnosis. This toolbox offers functionalities such as database creation, sample analysis, technical 
-                        report generation, statistical analysis, biomarker validation, and machine learning model training. It streamlines 
-                        the entire process from data collection to interpretation, empowering researchers to make data-driven decisions and 
-                        advance medical knowledge in OA diagnosis.</p>
-                    <div class="skills-list_project">
-                        <div class="skill_project">Python</div>
-                        <div class="skill_project">Data Analysis</div>
-                        <div class="skill_project">Data Visualization</div>
-                        <div class="skill_project">Machine Learning</div>
-                    </div>
-                </div>
-                <div class="project-image">
-                    <img src="images/oa.jpg" alt="Project Image">
-                </div>
-            </div>
-        </a>
-
-        <!-- Add more projects as needed -->
-    </div>
-</section>
-
-
+    
         <!-- Skills Section -->
-        <section id="skills">
-    		<div class="container">
-        		<h2>My Skills</h2>
-        		<div class="skills-list">
-            	<div class="skill">Python</div>
-            	<div class="skill">R</div>
-            	<div class="skill">FORTRAN</div>
-				<div class="skill">MATLAB</div>
-                <div class="skill">Package Development</div>
-            	<div class="skill">Data Analysis</div>
-            	<div class="skill">Data Visualization</div>
-				<div class="skill">Statistical Analysis</div>
-            	<div class="skill">Machine Learning</div>
-                <div class="skill">Deep Learning</div>
-				<div class="skill">Bioinformatics</div>
-                <div class="skill">Proteomics</div>
-                <div class="skill">Git</div>
-                <div class="skill">GitHub</div>
-            	<div class="skill">Linux</div>
-				<div class="skill">Jupyter Notebook</div>
-				<div class="skill">Pandas</div>
-            	<div class="skill">NumPy</div>
-                <div class="skill">Matplotlib</div>
-            	<div class="skill">Seaborn</div>
-				<div class="skill">Keras</div>
-            	<div class="skill">TensorFlow</div>
-            	<div class="skill">scikit-learn</div>
-            	<div class="skill">Tidyverse</div>
-            	<div class="skill">Tidymodels</div>
-				<div class="skill">ggplot2</div>
-        	</div>
-    	</div>
-</section>
-
+        <section id="skills" class="section">
+          <h2>Skills That Drive My Work</h2>
+          <div class="skills-container">
+            <div class="skill-box">R</div>
+            <div class="skill-box">Python</div>
+            <div class="skill-box">Software Development</div>
+            <div class="skill-box">Data Analysis</div>
+            <div class="skill-box">Data Visualization</div>
+				    <div class="skill-box">Statistical Modeling</div>
+            <div class="skill-box">Machine Learning</div>
+            <div class="skill-box">Deep Learning</div>
+				    <div class="skill-box">Bioinformatics</div>
+            <div class="skill-box">Proteomics</div>
+            <div class="skill-box">Git</div>
+            <div class="skill-box">GitHub</div>
+            <div class="skill-box">Computational Biology</div>
+            <div class="skill-box">Power BI</div>
+            <div class="skill-box">Leadership</div>
+            <div class="skill-box">Project Management</div>
+				    <div class="skill-box">Team Collaboration</div>
+            <div class="skill-box">Problem-Solving</div>
+            <div class="skill-box">Scientific Communication</div>
+				    <div class="skill-box">Time Management</div>
+          </div>
+        </section>
+        
+        
         <!-- Experience Section -->
-<section id="experience">
-    <div class="container">
-        <h2>My Experience</h2>
-        <div class="entries">
-            <div class="entry">
-                <div class="title">Intern at Fredrik Edfors Group, SciLifeLab</div>
-                <div class="subtitle">Dec 2023 - Present</div>
-                <div class="body">
-                    <p>Exploring big cancer cohorts, performing a comparative analysis of protein profiles from PEA and DIA methods, 
-                        assessing coverage, sensitivity, and specificity, as well as applying advanced bioinformatic and statistical 
-                        methods to identify potential biomarkers from the integrated dataset.</p>
+        <section id="experience" class="section">
+          <h2>My Professional Journey</h2>
+          <div class="timeline">
+            <!-- Experience 1 -->
+            <div class="timeline-item left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Master Thesis at Avlant Nilsson Group</h3>
                 </div>
+                <p class="date">Dec 2024 - Present</p>
+                <p>My Master’s thesis focuses on developing a Recurrent Neural Network model constrained by signaling network 
+                  information to predict time-resolved phosphoproteomic data. This innovative approach aims to advance the understanding 
+                  of cellular responses to various drugs and doses over time across different cell lines. By applying supervised deep 
+                  learning techniques, I am working to create a predictive model capable of accurately forecasting phosphoproteomic profiles.</p>
+              </div>
             </div>
-            <div class="entry">
-                <div class="title">Intern at THEMLab, NCSR</div>
-                <div class="subtitle">Jun 2022 - Nov 2022</div>
-                <div class="body">
-                    <p>Investigating nanoparticles for atherosclerosis treatment, studying particle behavior in the cardiovascular 
-                        system using numerical modeling, and leveraging computational fluid-particle dynamics to simulate physiological processes.</p>
+            <!-- Experience 2 -->
+            <div class="timeline-item right">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Research Intern at Human Protein Atlas, SciLifeLab</h3>
                 </div>
+                <p class="date">Dec 2023 - Jan 2025</p>
+                <p>I contributed to the development of the Human Disease Blood Atlas resource, focusing on biomarker discovery 
+                  through proteomics. I analyzed large datasets and applied machine learning techniques to identify biomarker 
+                  signatures, as well as developed software solutions for other researchers. This experience enhanced my skills 
+                  in bioinformatics, data analysis, and collaboration within a multidisciplinary research team.</p>
+              </div>
             </div>
-            <!-- Add more entries as needed -->
-        </div>
-    </div>
-</section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="container">
-                <h2>Contact me</h2>
-                <p>Let's connect in <a href="https://www.linkedin.com/in/kantonopoulos/" target="_blank" >LinkedIn</a> or contact me 
-                    directly at <a href="mailto:k.antono@outlook.com" target="_blank" >k.antono@outlook.com</a>.</p>
+            <!-- Experience 3 -->
+            <div class="timeline-item left">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-header">
+                  <h3>Research Assistant at THEMLab, NSCR "Demokritos"</h3>
+                </div>
+                <p class="date">Jun 2022 - Nov 2022</p>
+                <p>I worked on the numerical modeling of fine and ultrafine particles in the cardiovascular system, focusing on 
+                  computational fluid-particle dynamics under the influence of magnetic fields. In this project I developed my skills 
+                  in computational modeling, data analysis, and problem-solving, while furthering my understanding of complex biological 
+                  systems through multidisciplinary research.</p>
+              </div>
             </div>
         </section>
-    </main>
+        
+        
+     
+        <section id="contact" class="section">
+          <h2>Contact Me</h2>
+          <div class="contact-container">
+            <!-- Email Button -->
+            <a href="mailto:k.antono@outlook.com" class="contact-item">
+              <i class="fas fa-envelope"></i>
+            </a>
 
-    <!-- Footer Section -->
-    <footer id="footer">
-        <div class="container">
-            <p>&copy; 2024 Konstantinos Antonopoulos. All rights reserved.</p>
-        </div>
+            <!-- LinkedIn Button -->
+            <a href="https://www.linkedin.com/in/kantonopoulos/" target="_blank" class="contact-item">
+              <i class="fab fa-linkedin"></i>
+            </a>
+        
+            <!-- GitHub Button -->
+            <a href="https://github.com/kantonopoulos" target="_blank" class="contact-item">
+              <i class="fab fa-github"></i>
+            </a>
+        
+            <!-- CV Download Button -->
+            <a href="files/KAntonopoulos_CV.pdf" download="Your_Name_CV" class="contact-item download-btn">
+              <i class="fas fa-download"></i> CV
+            </a>
+          </div>
+        </section>
+    
+    </div>
+
+    <footer>
+      <p>© 2025 Konstantinos Antonopoulos. All rights reserved.</p>
     </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

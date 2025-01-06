@@ -1,317 +1,534 @@
+/* Base styles */
 body {
-    font-family: 'DM Sans', sans-serif;
-    color: #DEDEDE; /* White text color */
-    background: linear-gradient(to bottom, #20000e, #1a1a1a); /* Gradient background */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Enables flexbox layout */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: flex-start;
+  align-items: center; /* Aligns content horizontally in the center */
+  transition: background-color 0.1s, color 0.1s;
+  }
+  
+  header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  /* Light Mode (default) */
+  :root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --emphasis-color: #0077b6; /* Blue */
+    --border-color: #dddddd;
+    --box-background-color: rgba(163, 174, 180, 0.1);
+    --card-background-color: rgba(163, 174, 180, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1)
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  a {
+    color: var(--emphasis-color);
+    text-decoration: none;
+  }
+
+  .spacer {
+    flex: 1; /* Pushes the menu down */
+    height: 2rem; /* Controls the space between title and menu */
+  }
+  
+  .highlight {
+    color: var(--emphasis-color); /* Uses your emphasis color */
+}
+
+/* Header Styles */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    transition: background-color 0.0s, color 0.0s;
+  }
+  
+  /* Flex container for header content */
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1rem; 
+  }
+  
+  /* Menu Styles */
+  nav ul.menu {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
     margin: 0;
     padding: 0;
-}
-
-
-.container {
-    max-width: 800px;
-    margin: 0 auto; /* Center align the container */
-    padding: 20px calc(2vw); /* Add some padding to the sides */
-}
-
-.bigger-text {
-    font-size: 2.5rem; /* Adjust the font size as needed */
-}
-
-#menu {
-    position: fixed;
+    gap: 1rem; 
+  }
+  
+  nav ul.menu li {
+    display: inline-block;
+  }
+  
+  nav ul.menu li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.0s;
+  }
+  
+  nav ul.menu li a:hover {
+    color: var(--emphasis-color);
+  }
+  
+  /* Theme Toggle Switch */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .switch .slider {
+    position: absolute;
+    cursor: pointer;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(70, 74, 88, 0.3); /* Background color for the menu */
-    z-index: 1000; /* Ensure menu is above other content */
-    border-radius: 40px;
-}
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--border-color);
+    transition: background-color 0.0s, transform 0.0;
+    border-radius: 25px;
+  }
+  
+  .switch .slider::before {
+    position: absolute;
+    content: '';
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: var(--background-color);
+    transition: transform 0.0s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--emphasis-color);
+  }
+  
+  input:checked + .slider::before {
+    transform: translateX(25px);
+  }  
+  
+  /* Dark Mode */
+  [data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --emphasis-color: #64ffda; /* Teal */
+    --border-color: #333333;
+    --box-background-color: rgba(125, 125, 125, 0.1);
+    --card-background-color: rgba(125, 125, 125, 0.1);
+    --shadow-color: rgba(18, 18, 18, 0.1);
+  }
+  
 
-.menu-container {
-    display: flex;
-    justify-content: center; /* Center menu items horizontally */
-    padding: 10px 0; /* Add padding for spacing */
-}
-
-.menu-item {
-    margin: 0 10px; /* Add margin between menu items */
-    padding: 8px 12px; /* Add padding for spacing */
-    background-color: rgba(70, 74, 88, 0.5);
-    border-radius: 20px; /* Soften edges */
-}
-
-.menu-item a {
-    text-decoration: none;
-    color: #DEDEDE; /* Text color */
-}
-
-.menu-item:hover {
-    text-decoration: none;
-    background-color: rgba(70, 74, 88, 1); /* Change background color on hover */
-    border-radius: 20px;
-}
-
-
-#header-bottom {
-    padding: 10px 0; /* Add padding for spacing */
-}
-
-#secondary-menu {
-    text-align: center; /* Center menu items horizontally */
-}
-
-#secondary-menu ul {
-    list-style-type: none; /* Remove default list styles */
-    padding: 0; /* Remove default padding */
-    text-align: center; /* Center the menu items */
-}
-
-#secondary-menu li {
-    display: inline-block; /* Display the list items inline */
-    margin: 0 10px; /* Add margin to all sides */
-}
-
-#secondary-menu img {
-    width: 24px; /* Set the width of the icons */
-    height: auto; /* Maintain aspect ratio */
-    vertical-align: middle; /* Align the icons vertically in their containing boxes */
-}
-#secondary-menu a {
-    font-size:20px;
-    text-decoration: none;
-    color: #1a1a1a; /* Text color */
-    padding: 8px 12px; /* Add padding for spacing */
-    background-color: rgb(222,222,222,0.8); /* Background color for menu items */
-    border-radius: 40px; /* Soften edges */
-    transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-#secondary-menu a:hover {
-    background-color: rgb(222,222,222,1);
-    text-decoration: none;
-}
-
-.icon {
-    width: 20px; /* Adjust the width as needed */
-    height: auto; /* Maintain aspect ratio */
-}
-
-#skills {
-        padding: 0px 0; /* Add some padding around the skills section */
-}
-
-.skills-list {
-    display: flex; /* Use flexbox layout for the skills list */
-    justify-content: center; /* Center align the skills horizontally */
-    flex-wrap: wrap; /* Allow skills to wrap to the next line if needed */
-}
-
-.skill {
-    font-size:20px;
-    background-color: rgba(70, 74, 88, 0.5); /* Background color for the skill boxes */
-    color: #DEDEDE; /* Text color */
-    padding: 10px 20px; /* Add padding inside the skill boxes */
-    margin: 10px; /* Add some margin between skill boxes */
-    border-radius: 10px; /* Add rounded corners for soft edges */
-}
-
-.profile-picture {
-    width: 200px; /* Set the width of the profile picture */
-    height: 200px; /* Set the height of the profile picture */
-    border-radius: 50%; /* Make the profile picture round */
-    overflow: hidden; /* Hide any content outside the border-radius */
-    margin: 0 auto 20px; /* Center align the profile picture and add some margin below it */
-    background-color: #DEDEDE; /* Background color for the circle (optional) */
-    border: 2px solid #DEDEDE;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a shadow effect for depth */
-}
-
-.profile-picture img {
-    display: block; /* Make the image a block element */
-    width: 100%; /* Ensure the image fills the circle */
-    height: auto; /* Automatically adjust the height */
-}
-
-header, footer {
-    text-align: center; /* Center align text within header and footer */
+/* Main Section Layout */
+.container {
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
 }
 
 main {
-    text-align: center; /* Center align text within main content */
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-section {
-    margin-bottom: 50px; /* Add some space between sections */
+.main-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  padding: 0 2rem;
 }
 
-h1 {
-    margin-top: 0; /* Remove default top margin for h1 */
-    font-size: 2.5rem; /* Increase font size for h1 */
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-h2 {
-    font-size: 2rem; /* Increase font size for h2 */
+.main-headline {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
 }
 
-h3 {
-    font-size:24px; /* Increase font size for h3 */
-    font-weight: lighter;
+.main-description {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
-/* Optional: Add styling for links */
-a {
-    color: #B0DFE5;
-    text-decoration: none;
-}
-a:hover {
-    text-decoration: underline;
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Move the timeline styling to the specific section */
+.profile-image {
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 0%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* General Styles for Sections After Main (Inside sections-container) */
+.sections-container {
+  width: 100%;              /* Full width of the screen */
+  max-width: 1000px;        /* Optional: Set max-width to avoid stretching too much on large screens */
+  margin: 0 auto;           /* Center the container horizontally */
+  padding: 0 2rem;          /* Optional: Padding inside the container */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Section Styling */
+.section {
+  width: 100%;
+  padding: 2rem;
+  margin-top: 0rem; /* Space between sections */
+  box-sizing: border-box;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.section p {
+  font-size: 1.25rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-top: 1rem;
+  text-align: justify;
+}
+
+/* About Me Section Specific Styles */
+#about-me {
+  background-color: var(--background-color-light);
+}
+
+/* Experience Section Specific Styles */
 #experience {
-  display: inline-block; 
-  position: relative; /* Ensure the section is positioned relatively */
+  background-color: var(--background-color-light);
 }
 
-#experience:before {
-  content: '';
-  position: absolute; /* Position the vertical line absolutely */
-  top:15%;
-  left:50%;
-  transform:translateX(-50%);
-  width:4px;
-  background-color:#DEDEDE;
-  height: 80%;
-  }
-
-#experience .entries {
-  width:calc(100% - 80px);
-  max-width: 1200px; /* Adjust the desired width */
-  margin: 0 auto; /* Center the section horizontally */
-  position: relative;
-  left:-5px;
-  height: 70vh;
-}
-
-#experience .entry {
-  width:calc(50% - 80px);
-  float:left; 
-  padding:20px;
-  clear:both;
-  text-align:right;
-}
-
-#experience .entry:not(:first-child) {
-  margin-top:-60px;
-}
-
-#experience .entry .title {
-  font-size:24px;
-  position: relative;
-}
-
-#experience .entry .subtitle {
-  color: #B2B2B2;
-  text-decoration: none;
-  margin-bottom:12px;
-  position: relative;
-}
-
-#experience .entry .title:before {
-  content: '';
-  position: absolute;
-  width:8px;
-  height:8px;
-  border:4px solid #DEDEDE;
-  background-color:#DEDEDE;
-  border-radius:100%;
-  top:50%;
-  transform:translateY(-50%);
-  right:-73px;
-  z-index:1000;
-}
-
-#experience .entry .title.big:before {
-  width:24px;
-  height:24px;
-  transform:translate(8px,-50%);
-}
-
-#experience .entry .body {
-}
-
-#experience .entry:nth-child(2n) {
-  text-align:left;
-  float:right;
-}
-
-#experience .entry:nth-child(2n) .title:before {
-  left:-63px;
-}
-
-#experience .entry:nth-child(2n) .title.big:before {
-  transform:translate(-8px,-50%);
-}
-
+/* Projects Section Layout */
 #projects {
-    padding: 0px 0;
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: var(--background-color);
 }
 
-.project-link {
-    text-decoration: none; /* Remove underline from the link */
+#projects h2 {
+  text-align: left;
 }
 
-.project-link:hover {
-    text-decoration: none;
-    background-color: rgba(70, 74, 88, 0.8); /* Change background color on hover */
-    border-radius: 10px;
+/* Grid layout for the project boxes (vertical order) */
+.projects-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column, vertically stacked */
+  gap: 2rem;
+  width: 100%;
+  justify-items: center;
 }
 
-.project {
-    display: flex;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+/* Individual project box */
+.project-box {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--card-background-color);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  transition: transform 0.1s ease, background-color 0.1s ease; /* Add transition for background-color */
+  align-items: center;
+  text-decoration: none; /* Ensure links have no text decoration */
 }
 
-.project-description {
-    flex: 1;
-    padding: 20px;
-    background-color: rgba(70, 74, 88, 0.5); /* Background color with transparency */
-    text-align: left;
+.project-box:hover {
+  transform: scale(1.05); /* Slightly enlarge the box on hover */
 }
 
+/* Image styling */
 .project-image {
-    flex: 1;
-    background-color: rgba(70, 74, 88, 0.5);
-    display: flex; /* Enable flexbox layout */
-    justify-content: center; /* Center the image horizontally */
-    align-items: center; /* Center the image vertically */
+  flex: 1; /* Equal width for the image section */
 }
 
 .project-image img {
-    max-width: 100%;
-    height: auto;
+  width: 75%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px 0 0 15px;
 }
 
-.skills-list_project {
-    margin-bottom: 10px;
+/* Text styling */
+.project-text {
+  flex: 1; /* Equal width for the text section */
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.skill_project {
-    font-size:12px;
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 5px;
-    background-color: #39001A;
-    color: #DEDEDE;
-    border-radius: 10px;
-    text-decoration: none;
+.project-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+  text-align: left;
 }
 
-.project-link {
-    display: block; /* Make the link cover the entire big box */
-    color: inherit; /* Inherit the text color */
+.project-text p {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.5;
 }
 
+/* Skills Section */
+#skills {
+  padding: 2rem 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* Container for the Skill Boxes */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem; /* Space between boxes */
+  margin-top: 1rem;
+}
+
+/* Individual Skill Box */
+.skill-box {
+  background-color: var(--box-background-color); /* You can choose a color here */
+  color: var(--text-color);
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 4px var(--shadow-color);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Ensure the skill boxes fit well on smaller screens */
+@media (max-width: 768px) {
+  .skills-container {
+    justify-content: flex-start;
+  }
+  
+  .skill-box {
+    margin-bottom: 0.8rem;
+  }
+}
+
+
+/* Experience Section */
+#experience {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--text-color); /* Color of the vertical line */
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  width: 100%;
+  margin-bottom: 3rem;
+  align-items: center;
+}
+
+.timeline-item.left {
+  flex-direction: row-reverse; /* Align left items to the right side */
+}
+
+.timeline-item.right {
+  flex-direction: row; /* Align right items to the left side */
+}
+
+.timeline-dot {
+  width: 15px;
+  height: 15px;
+  background-color: var(--text-color); /* Dot color */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the dot in the middle of the experience box */
+  z-index: 1;
+}
+
+.timeline-content {
+  padding: 1.5rem;
+  width: 45%;
+  box-sizing: border-box;
+  border-radius: 8px;
+  position: relative;
+}
+
+.timeline-item.left .timeline-content {
+  margin-left: 20px; /* Create space between the content and the vertical line */
+  text-align: left; /* Align text to the right for left-positioned content */
+}
+
+.timeline-item.right .timeline-content {
+  margin-right: 20px; /* Create space between the content and the vertical line */
+  text-align: right; /* Align text to the left for right-positioned content */
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+  text-align: inherit; /* Inherit text alignment from the parent */
+}
+
+.timeline-content p {
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  text-align: inherit;
+}
+
+/* Contact Me Section */
+#contact {
+  padding: 2rem 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+/* Container for the Contact Items */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* Space between items */
+  margin-top: 0rem;
+}
+
+/* Contact Item Style */
+.contact-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 2.0rem; /* Icon size */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none; /* Remove text underline */
+}
+
+.contact-item i {
+  margin: 0; /* Remove margin between icon and container */
+}
+
+/* Hover Effect for Contact Items */
+.contact-item:hover {
+  color: var(--emphasis-color); /* Text color on hover */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column; /* Stack icons on top of each other on small screens */
+  }
+
+  .contact-item {
+    width: 60px;
+    height: 60px;
+    font-size: 1.25rem; /* Smaller icon size on mobile */
+  }
+
+  .download-btn {
+    font-size: 0.9rem;
+  }
+}
+
+/* Footer Section */
+footer {
+  background-color: var(--text-color);
+  color: var(--background-color); /* Text color */
+  padding: 1rem 0;
+  width: 100%; /* Full width */
+  text-align: center; /* Center text horizontally */
+  position: relative;
+  bottom: 0;
+  margin-top: 3rem; /* Optional: space from the last content section */
+}
+
+footer p {
+  margin: 0; /* Remove default margin */
+  font-size: 1rem;
+}
